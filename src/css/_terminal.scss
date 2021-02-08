@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600,500&display=swap');
+$terminalHeight: 400px;
+.terminal {
+    &-line {
+        &__command {
+            margin-top: 1px;
+        }
+        &__result {
+            font-weight: 400;
+        }
+    }
+    &-green {
+        color: greenyellow;
+    }
+    &-purple {
+        color: darken(#0f0, 1);
+    }
+    &-con {
+        background-color: black;
+        color: white;
+        margin: 50px 100px;
+        border-radius: 5px;
+        font-family: 'Nunito';
+        transition: margin 0.5s;
+        font-weight: 500;
+
+        &__full {
+            & > .terminal-body {
+                height: $terminalHeight + 100px;
+            }
+            margin: 0;
+        }
+    }
+    &-header {
+        background-color: #252525;
+        border-radius: 4px;
+        &__button {
+            & > i {
+                display: block;
+                line-height: 1;
+                margin: 0;
+            }
+            padding: 0px;
+            display: flex;
+            border-radius: 1000px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0 5px;
+            font-size: 7.5px;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            color: black;
+            user-select: none;
+            cursor: pointer;
+            &s {
+                padding: 5px;
+                display: flex;
+                width: fit-content;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        &__close {
+            & > i {
+                transform: translateX(0.25px) translateY(1px) scale(1.1);
+            }
+        }
+        &__minimize {
+            background-color: yellow;
+            & > i {
+                transform: translateX(0px) translateY(1px);
+            }
+        }
+        &__fullscreen {
+            background-color: green;
+            & > i {
+                transform: translateX(0px) translateY(0px);
+            }
+        }
+    }
+    &-body {
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        transition: height 0.5s, padding 1s;
+        line-height: 1.5;
+        height: $terminalHeight;
+        padding: 10px;
+        &__closed {
+            height: 0 !important;
+            overflow-y: hidden;
+            padding-top: 0px !important ;
+            padding-bottom: 0px !important ;
+        }
+    }
+}
