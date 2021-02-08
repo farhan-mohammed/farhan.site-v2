@@ -63,18 +63,28 @@ $terminalHeight: 400px;
             }
         }
         &__close {
+            background-color: #fd635a;
+            &:hover {
+                background-color: darken(#fd635a, 15);
+            }
             & > i {
                 transform: translateX(0.25px) translateY(1px) scale(1.1);
             }
         }
         &__minimize {
-            background-color: yellow;
+            background-color: #fdbd3f;
+            &:hover {
+                background-color: darken(#fdbd3f, 15);
+            }
             & > i {
                 transform: translateX(0px) translateY(1px);
             }
         }
         &__fullscreen {
-            background-color: green;
+            background-color: #34c949;
+            &:hover {
+                background-color: darken(#34c949, 15);
+            }
             & > i {
                 transform: translateX(0px) translateY(0px);
             }
