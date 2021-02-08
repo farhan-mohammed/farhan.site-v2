@@ -121,15 +121,15 @@ class Terminal extends Component {
                 result: ['Ryerson University', 'Spring 2022'],
             },
             {
-                command: 'favourite frameworks and libraries',
+                command: 'favourite_frameworks_and_libraries',
                 result: ['React.js, Express.js, Numpy, Tensorflow'],
             },
             {
-                command: 'favourite tools',
+                command: 'favouritE_tools',
                 result: ['Git, Netlify'],
             },
             {
-                command: 'favourite text editor',
+                command: 'favourite_text_editor',
                 result: [
                     <a
                         href="https://www.youtube.com/watch?v=gnupOrSEikQ&ab_channel=BenAwad"
@@ -140,7 +140,7 @@ class Terminal extends Component {
                 ],
             },
             {
-                command: 'favourite languages',
+                command: 'favourite_languages',
                 result: ['Python, JavaScript/TypeScript, Java, C++'],
             },
             {
@@ -153,11 +153,11 @@ class Terminal extends Component {
                 ],
             },
             {
-                command: 'favourite plants',
+                command: 'favourite_plants',
                 result: ['Peppers, Cucumbers, Tomatoes, Lettuce'],
             },
             {
-                command: 'favourite games',
+                command: 'favourite_games',
                 result: ['Valorant, Rocket League'],
             },
         ];
