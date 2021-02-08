@@ -23,32 +23,32 @@ export default class Home extends Component {
                     </div>
                 </section>
                 <section className="wide">
-                    <div className="container intro">
-                        <div className="intro-text">
-                            <div>
-                                these are soe websites i helped build:
-                                <div>Ruhacks 2021</div>
-                                <div>Google DSC</div>
-                                <div>Cancelled Toronto</div>
-                                <div>Innovation Tank</div>
-                                <div>Freeze Frame</div>
-                            </div>
-                            <div>These are teams i am a part of :....</div>
+                    <div className="container web-con">
+                        <div className="web-title home-title">Some websites I help build</div>
+                        <div className="web-list">
+                            <div className="web-list__item">Ruhacks 2021</div>
+                            <div className="web-list__item">Google DSC</div>
+                            <div className="web-list__item">Cancelled Toronto</div>
+                            <div className="web-list__item">Innovation Tank</div>
+                            <div className="web-list__item">Freeze Frame</div>
                         </div>
                     </div>
                 </section>
                 <section className="wide">
-                    <div className="container intro">
-                        <div className="intro-text">
-                            Check out
+                    <div className="container">
+                        <div className="cko-title home-title"> You should check out my</div>
+                        <div className="cko-con">
                             <Link className="cko-item" to="/plants">
-                                my plants
+                                <div className="cko-item__text">plants</div>
+                                <div className="cko-item__image"></div>
                             </Link>
                             <Link className="cko-item" to="/projects">
-                                My projects
+                                <div className="cko-item__text">projects</div>
+                                <div className="cko-item__image"></div>
                             </Link>
                             <Link className="cko-item" to="/awards">
-                                Achivements
+                                <div className="cko-item__text">awards</div>
+                                <div className="cko-item__image"></div>
                             </Link>
                         </div>
                     </div>
