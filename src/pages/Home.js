@@ -20,16 +20,6 @@ export default class Home extends Component {
                 <section className="wide">
                     <div className="container ">
                         <Terminal></Terminal>
-                        <div className="intro-text">
-                            Terminall!!!
-                            <div>
-                                My favourite languages include:
-                                <div>Python</div>
-                                <div>Javascript</div>
-                                <div>Poker</div>
-                            </div>
-                            <div>My Favourite frameworks include: React, express, numpy</div>
-                        </div>
                     </div>
                 </section>
                 <section className="wide">
