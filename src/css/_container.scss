@@ -68,11 +68,11 @@ footer {
     font-size: 19px;
 
     & > * {
-        color: black;
+        color: $black;
         &:active,
         &:visited,
         &:hover {
-            color: initial;
+            color: inherit;
         }
         &:not(:last-child) {
             margin-right: 20px;

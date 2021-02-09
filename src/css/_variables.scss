@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+$black: #184d47;
 * {
     margin: 0;
     padding: 0;
     border: 0;
     font-family: 'Raleway';
+    color: $black;
 }
 $primary: #5c8d89;
 $secondary: #74b49b;
