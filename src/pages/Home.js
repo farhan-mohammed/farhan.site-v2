@@ -141,7 +141,7 @@ class Intro extends Component {
                 spread: r(45, 80),
                 origin: {
                     x: e.screenX / window.innerWidth,
-                    y: e.screenY / window.innerHeight - 0.09,
+                    y: e.screenY / window.innerHeight - 0.1,
                 },
             });
             // this.setState({ confetti: false });
@@ -163,7 +163,7 @@ class Intro extends Component {
             spread: r(45, 120),
             origin: {
                 x: e.screenX / window.innerWidth,
-                y: e.screenY / window.innerHeight - 0.03,
+                y: e.screenY / window.innerHeight - 0.1,
             },
         });
     };
