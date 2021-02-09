@@ -141,13 +141,13 @@ class Intro extends Component {
                 spread: r(45, 80),
                 origin: {
                     x: e.screenX / window.innerWidth,
-                    y: e.screenY / window.innerHeight - 0.03,
+                    y: e.screenY / window.innerHeight - 0.09,
                 },
             });
-            this.setState({ confetti: false });
-            setTimeout(() => {
-                this.setState({ confetti: true });
-            }, 50);
+            // this.setState({ confetti: false });
+            // setTimeout(() => {
+            //     this.setState({ confetti: true });
+            // }, 50);
         }
     };
 
