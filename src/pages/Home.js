@@ -75,7 +75,7 @@ class Intro extends Component {
         }
 
         const direction = Math.sign(r(-6, 6));
-        const particleCount = r(122, 245);
+        const particleCount = r(10, 100);
         confetti({
             particleCount,
             angle: r(90, 90 + direction * 30),

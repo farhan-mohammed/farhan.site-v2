@@ -23,7 +23,7 @@ export default class Header extends Component {
                 <Link
                     className={this.props.page === 'resume'}
                     to="/resume.pdf"
-                    onClick={() => this.window.redirect('./resume.pdf')}
+                    onClick={() => window.location.replace(`/resume.pdf`)}
                 >
                     resume
                 </Link>
