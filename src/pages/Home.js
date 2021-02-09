@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import confetti from 'canvas-confetti';
+import Projects from './Projects';
 
 export default class Home extends Component {
     render() {
@@ -24,14 +25,8 @@ export default class Home extends Component {
                 </section>
                 <section className="wide">
                     <div className="container web-con">
-                        <div className="web-title home-title">Some websites I help build</div>
-                        <div className="web-list">
-                            <div className="web-list__item">Ruhacks 2021</div>
-                            <div className="web-list__item">Google DSC</div>
-                            <div className="web-list__item">Cancelled Toronto</div>
-                            <div className="web-list__item">Innovation Tank</div>
-                            <div className="web-list__item">Freeze Frame</div>
-                        </div>
+                        <div className="home-title">Some websites I help build</div>
+                        <DemoProjects />
                     </div>
                 </section>
                 <section className="wide">
@@ -59,11 +54,71 @@ export default class Home extends Component {
                     </div>
                 </section>
                 <footer>
-                    <div>Linkedin</div>
-                    <div>GitHub</div>
-                    <div>Devpost</div>
-                    <div>Resume</div>
+                    <a href="https://www.linkedin.com/in/farhanhmd/">Linkedin</a>
+                    <a href="https://github.com/farhan-mohammed">GitHub</a>
+                    <a href="https://devpost.com/farhanhm12">Devpost</a>
+                    <a href="./resume.pdf">Resume</a>
                 </footer>
+            </div>
+        );
+    }
+}
+// https://cdn.logo.com/hotlink-ok/logo-social-sq.png
+
+class DemoProjects extends Component {
+    projects_21 = [
+        {
+            name: 'RU Hacks',
+            year: 2021,
+            link: '',
+            logo: 'https://cdn.logo.com/hotlink-ok/logo-social-sq.png',
+        },
+        {
+            name: 'Ryerson DSC',
+            year: 2021,
+            link: '',
+            logo: 'https://cdn.logo.com/hotlink-ok/logo-social-sq.png',
+        },
+    ];
+    projects_20 = [
+        {
+            name: 'Innovation Tank',
+            year: 2020,
+            link: '',
+            logo: 'https://cdn.logo.com/hotlink-ok/logo-social-sq.png',
+        },
+        {
+            name: 'Cancelled Toronto',
+            year: 2020,
+            link: '',
+            logo: 'https://cdn.logo.com/hotlink-ok/logo-social-sq.png',
+        },
+    ];
+    projects_19 = [
+        {
+            name: 'Freeze Frame',
+            year: 2019,
+            link: '',
+            logo: 'https://cdn.logo.com/hotlink-ok/logo-social-sq.png',
+        },
+    ];
+    renderProject = ({ name, year, link, logo }) => {
+        return (
+            <a className="home-project" href={link}>
+                <img src={logo} alt={name} className="home-project__image" />
+                <div className="home-project__text">{name}</div>
+            </a>
+        );
+    };
+    render() {
+        return (
+            <div className="home-project__con">
+                <div className="home-project__year">2021</div>
+                {this.projects_21.map((p) => this.renderProject(p))}
+                <div className="home-project__year">2020</div>
+                {this.projects_20.map((p) => this.renderProject(p))}
+                <div className="home-project__year">2019</div>
+                {this.projects_19.map((p) => this.renderProject(p))}
             </div>
         );
     }
@@ -75,11 +130,11 @@ class Intro extends Component {
         }
 
         const direction = Math.sign(r(-6, 6));
-        const particleCount = r(10, 100);
+        const particleCount = r(100, 200);
         confetti({
             particleCount,
-            angle: r(90, 90 + direction * 30),
-            spread: r(45, 80),
+            angle: 180,
+            spread: 360,
             origin: {
                 x: e.screenX / window.innerWidth,
                 y: e.screenY / window.innerHeight - 0.05,

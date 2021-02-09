@@ -6,6 +6,10 @@
     padding: 40px 0;
     width: 100vw;
 }
+body,
+#root {
+    background-color: $background;
+}
 .header {
     display: flex;
     position: absolute;
@@ -55,26 +59,23 @@ body,
 #root {
     overflow-x: hidden;
 }
-.intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    &-name {
-        color: $primary;
-        display: inline-block;
-        font-size: 600 !important;
-        cursor: pointer;
-    }
-    &-text {
-        height: fit-content;
-        font-size: 30px;
-        line-height: 1.4;
-    }
-}
 footer {
     width: 100vw;
     display: flex;
     justify-content: center;
     padding: 30px 0;
+    font-family: 'Raleway';
+    font-size: 19px;
+
+    & > * {
+        color: black;
+        &:active,
+        &:visited,
+        &:hover {
+            color: initial;
+        }
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
 }

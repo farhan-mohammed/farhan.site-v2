@@ -1,0 +1,20 @@
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: 'Nunito';
+    &-name {
+        color: $primary;
+        display: inline-block;
+        font-size: 600 !important;
+        cursor: pointer;
+    }
+    &-text {
+        font-family: 'Raleway';
+        height: fit-content;
+        font-size: 30px;
+        width: 700px;
+        line-height: 1.4;
+    }
+}
