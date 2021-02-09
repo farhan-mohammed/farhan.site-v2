@@ -124,23 +124,32 @@ class DemoProjects extends Component {
     }
 }
 class Intro extends Component {
-    renderConfetti(e) {
+    constructor(props) {
+        super(props);
+        this.state = { confetti: true };
+    }
+    renderConfetti = (e) => {
         function r(mi, ma) {
             return parseInt(Math.random() * (ma - mi) + mi);
         }
-
-        const direction = Math.sign(r(-6, 6));
-        const particleCount = r(100, 200);
-        confetti({
-            particleCount,
-            angle: 180,
-            spread: 360,
-            origin: {
-                x: e.screenX / window.innerWidth,
-                y: e.screenY / window.innerHeight - 0.05,
-            },
-        });
-    }
+        if (this.state.confetti) {
+            const direction = Math.sign(r(-6, 6));
+            const particleCount = r(25, 150);
+            confetti({
+                particleCount,
+                angle: r(0, 360),
+                spread: 120,
+                origin: {
+                    x: e.screenX / window.innerWidth,
+                    y: e.screenY / window.innerHeight - 0.05,
+                },
+            });
+            this.setState({ confetti: false });
+            setTimeout(() => {
+                this.setState({ confetti: true });
+            }, 100);
+        }
+    };
     render() {
         return (
             <section className="full">
@@ -148,7 +157,7 @@ class Intro extends Component {
                     <Header page={'home'} />
                     <div className="intro-text">
                         Hello, I'm{' '}
-                        <div className="intro-name" onMouseEnter={this.renderConfetti}>
+                        <div className="intro-name" onMouseMove={this.renderConfetti}>
                             Farhan Mohammed
                         </div>
                         , a Math & Computer Science Student at Ryerson University, who's passionate
