@@ -179,7 +179,7 @@ class Intro extends Component {
                             onMouseMove={this.renderConfetti}
                             onClick={this.clickConfetti}
                         >
-                            Farhan Mohammed
+                            Farhan Mohammed 🎉
                         </div>
                         , a Math & Computer Science Student at Ryerson University, who's passionate
                         about design and development.
