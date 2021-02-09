@@ -134,21 +134,38 @@ class Intro extends Component {
         }
         if (this.state.confetti) {
             const direction = Math.sign(r(-6, 6));
-            const particleCount = r(25, 150);
+            const particleCount = r(2, 15);
             confetti({
                 particleCount,
-                angle: r(0, 360),
-                spread: 120,
+                angle: r(30, 150),
+                spread: r(45, 80),
                 origin: {
                     x: e.screenX / window.innerWidth,
-                    y: e.screenY / window.innerHeight - 0.05,
+                    y: e.screenY / window.innerHeight - 0.03,
                 },
             });
             this.setState({ confetti: false });
             setTimeout(() => {
                 this.setState({ confetti: true });
-            }, 100);
+            }, 50);
         }
+    };
+
+    clickConfetti = (e) => {
+        function r(mi, ma) {
+            return parseInt(Math.random() * (ma - mi) + mi);
+        }
+        const direction = Math.sign(r(-6, 6));
+        const particleCount = r(122, 245);
+        confetti({
+            particleCount,
+            angle: r(30, 150),
+            spread: r(45, 120),
+            origin: {
+                x: e.screenX / window.innerWidth,
+                y: e.screenY / window.innerHeight - 0.03,
+            },
+        });
     };
     render() {
         return (
@@ -157,7 +174,11 @@ class Intro extends Component {
                     <Header page={'home'} />
                     <div className="intro-text">
                         Hello, I'm{' '}
-                        <div className="intro-name" onMouseMove={this.renderConfetti}>
+                        <div
+                            className="intro-name"
+                            onMouseMove={this.renderConfetti}
+                            onClick={this.clickConfetti}
+                        >
                             Farhan Mohammed
                         </div>
                         , a Math & Computer Science Student at Ryerson University, who's passionate
