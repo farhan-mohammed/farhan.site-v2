@@ -156,7 +156,7 @@ class Intro extends Component {
             return parseInt(Math.random() * (ma - mi) + mi);
         }
         const direction = Math.sign(r(-6, 6));
-        const particleCount = r(122, 245);
+        const particleCount = r(122, 150);
         confetti({
             particleCount,
             angle: r(30, 150),
