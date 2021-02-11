@@ -9,10 +9,11 @@ $psize: 300px;
         box-shadow: 0 0px 5px 2px rgba(black, 0.2);
         border: 5px solid $secondary;
         background-color: $secondary;
+
         &:hover > .ps-arrow {
             &R,
             &L {
-                opacity: 0.7;
+                opacity: 1;
             }
         }
     }
@@ -55,7 +56,10 @@ $psize: 300px;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            color: white;
+            color: #fff !important;
+            & > i {
+                color: inherit;
+            }
             transition: opacity 1s;
             opacity: 0;
         }

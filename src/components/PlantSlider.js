@@ -16,7 +16,7 @@ export default class PlantSlider extends Component {
                         this.setState({ c: newc });
                     }}
                 >
-                    ⬅️
+                    <i class="fas fa-arrow-left"></i>
                 </div>
                 <div className="ps-images" style={{ right: this.state.c * 300 }}>
                     {plants.map(({ descp, img }) => {
@@ -33,7 +33,7 @@ export default class PlantSlider extends Component {
                         this.setState({ c: newc });
                     }}
                 >
-                    ➡️
+                    <i class="fas fa-arrow-right"></i>
                 </div>
                 <div className="ps-text">{plants[this.state.c].descp} </div>
             </div>
