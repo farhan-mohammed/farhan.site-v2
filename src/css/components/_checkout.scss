@@ -11,11 +11,12 @@
             transition: padding 0.5s;
         }
         &__image {
-            transition: width 0.5s, height 0.6s;
+            transition: width 0.5s, height 0.6s, opacity 0.5s;
             position: relative;
-            width: 0;
+            width: 100%;
             margin: 0 auto;
-            height: 0;
+            height: 150px;
+            opacity: 0;
             background-color: $primary;
             background-size: cover;
             background-position: center;
@@ -37,6 +38,7 @@
             color: $background;
             letter-spacing: 10px;
             & > .cko-item__image {
+                opacity: 1;
                 height: 150px;
                 width: 100%;
                 filter: blur(2px);

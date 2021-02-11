@@ -14,7 +14,10 @@
         font-family: 'Raleway';
         height: fit-content;
         text-align: center;
-        font-size: 30px;
+        font-size: $bodytext;
+        @include mobileq {
+            font-size: $bodytextm;
+        }
         width: 700px;
         line-height: 1.4;
     }

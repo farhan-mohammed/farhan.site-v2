@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import React, { Component } from 'react';
 import Header from '../components/Header';
 
@@ -109,6 +110,7 @@ export default class Achivements extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer></Footer>
             </section>
         );
     }

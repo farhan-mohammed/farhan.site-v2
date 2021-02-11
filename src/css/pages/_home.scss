@@ -7,13 +7,18 @@
             flex-wrap: wrap;
         }
         &__year {
+            &CON {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             font-weight: 600;
             writing-mode: vertical-rl;
             text-orientation: upright;
-            font-feature-settings: "tnum";
+            font-feature-settings: 'tnum';
             font-size: 24px;
 
-            font-family: "Raleway";
+            font-family: 'Raleway';
             font-variant-numeric: tabular-nums;
 
             margin-left: 15px;
@@ -51,8 +56,12 @@
         font-size: 50px;
         line-height: 1.4;
         font-family: 800;
-        font-family: "Raleway";
+        font-family: 'Raleway';
         margin-bottom: 15px;
+        @include mobileq {
+            font-size: 40px;
+            text-align: center;
+        }
     }
 }
 .tadaanim {

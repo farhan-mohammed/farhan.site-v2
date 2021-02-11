@@ -19,6 +19,9 @@ body,
     display: flex;
     & > a {
         font-size: $buttontext;
+        @include mobileq {
+            font-size: $buttontextm;
+        }
         &,
         &:hover,
         &:active,
@@ -66,9 +69,11 @@ footer {
     width: 100vw;
     display: flex;
     justify-content: center;
+    padding: 0 10px;
+    flex-wrap: wrap;
     padding: 30px 0;
     font-family: 'Raleway';
-    font-size: $buttontext;
+    margin-bottom: 30px;
 
     & > * {
         color: $black;
@@ -77,8 +82,14 @@ footer {
         &:hover {
             color: inherit;
         }
+        font-size: $buttontext;
+        margin: 15px;
+
+        @include mobileq {
+            font-size: $buttontextm;
+        }
         &:not(:last-child) {
-            margin-right: 20px;
+            // margin-right: 20px;
         }
     }
 }
