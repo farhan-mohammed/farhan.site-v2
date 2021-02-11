@@ -191,7 +191,7 @@ class Intro extends Component {
                 gravity: 1,
                 origin: {
                     x: e.pageX / window.innerWidth,
-                    y: e.pageY / window.innerHeight,
+                    y: e.screenY / window.innerHeight - 0.08,
                 },
             });
             // this.setState({ confetti: false });
@@ -216,7 +216,7 @@ class Intro extends Component {
             startVelocity: 40,
             origin: {
                 x: e.pageX / window.innerWidth,
-                y: e.pageY / window.innerHeight,
+                y: e.screenY / window.innerHeight - 0.08,
             },
             disableForReducedMotion: true,
         });
