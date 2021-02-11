@@ -6,7 +6,6 @@ export default class PlantSlider extends Component {
     }
     render() {
         let { plants } = this.props;
-        let tt = require('media/plants/2020/bellpeppers/01.jpg');
         return (
             <div className="ps-con">
                 <div
@@ -22,10 +21,7 @@ export default class PlantSlider extends Component {
                 <div className="ps-images" style={{ right: this.state.c * 300 }}>
                     {plants.map(({ descp, img }) => {
                         return (
-                            <div
-                                className="ps-image"
-                                style={{ backgroundImage: `url(${img.default})` }}
-                            />
+                            <div className="ps-image" style={{ backgroundImage: `url(${img})` }} />
                         );
                     })}
                 </div>
