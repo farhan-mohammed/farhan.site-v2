@@ -2,7 +2,7 @@ $psize: 300px;
 .ps {
     &-con {
         margin: 10px;
-        border-radius: 30px;
+        border-radius: 25px;
         overflow-x: hidden;
         position: relative;
         width: $psize;
@@ -36,9 +36,15 @@ $psize: 300px;
     }
     &-text {
         background-color: $secondary;
-        padding: 5px;
-        width: $psize;
-        height: $psize/4;
+        width: $psize - 10px;
+        height: 40px;
+
+        padding: 10px 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: 600;
+        color: #000;
     }
     &-arrow {
         &R,

@@ -6,6 +6,23 @@ import Projects from "./Projects";
 
 import FrameFreezeLogo from "../media/logos/framefreeze";
 export default class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            animCard: true,
+        };
+    }
+    updateAnim = () => {
+        setInterval(() => {
+            this.setState({ animCard: false });
+            setTimeout(() => {
+                this.setState({ animCard: true });
+            }, 1000);
+        }, 3000);
+    };
+    componentDidMount() {
+        this.updateAnim();
+    }
     render() {
         return (
             <div>
@@ -40,7 +57,6 @@ export default class Home extends Component {
                 <section className="wide">
                     <div className="container">
                         <div className="cko-title home-title">
-                            {" "}
                             You should check out my
                         </div>
                         <div className="cko-con">
@@ -61,7 +77,18 @@ export default class Home extends Component {
                 </section>
                 <section className="wide">
                     <div className="container intro">
-                        <div className="intro-text">hello</div>
+                        <div className="intro-text">
+                            hello, I found a card{" "}
+                            <a
+                                href="https://farhan.site/"
+                                className={
+                                    this.state.animCard ? "tadaanim" : ""
+                                }
+                                style={{ display: "block", fontSize: 60 }}
+                            >
+                                <i class="far fa-id-card"></i>
+                            </a>
+                        </div>
                     </div>
                 </section>
                 <footer>
