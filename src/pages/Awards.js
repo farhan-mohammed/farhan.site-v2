@@ -97,7 +97,7 @@ export default class Achivements extends Component {
             <section className="full">
                 <div className="container awards-con">
                     <Header page={'awards'} />
-                    <div className="awards-title home-title">Awards & Achivements</div>
+                    <div className="awards-title home-title">Awards & Achievement</div>
                     <div className="awards-text">
                         <div className="awards-bar__con">
                             <div className="awards-bar__bar"></div>
