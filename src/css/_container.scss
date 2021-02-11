@@ -32,6 +32,9 @@ body,
     }
     &-active {
         color: $primary !important;
+        @include mobileq {
+            display: none;
+        }
     }
 }
 .container {

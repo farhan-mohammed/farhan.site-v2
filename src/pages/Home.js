@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import confetti from 'canvas-confetti';
 import Projects from './Projects';
 
+import FrameFreezeLogo from '../media/logos/framefreeze';
 export default class Home extends Component {
     render() {
         return (
@@ -12,9 +13,11 @@ export default class Home extends Component {
                 <section className="wide">
                     <div className="container intro">
                         <div className="intro-text">
-                            I am currently searching for Software Engineering internships. Out of
-                            school, I am take part in a few developer communities such as RU Hacks,
-                            Ryerson Developer Student Club and Ryerson Programming Club.
+                            In my free time, I like to work on side projects to learning new and
+                            hopefully make something I or someone would actually use. I also like to
+                            garden and grow vegetable plants, there's just something about taking
+                            care of a plant that makes so worth while.<br></br>
+                            <br></br> I am currently searching for Software Engineering internships.
                         </div>
                     </div>
                 </section>
@@ -84,28 +87,30 @@ class DemoProjects extends Component {
         {
             name: 'Innovation Tank',
             year: 2020,
-            link: '',
-            logo: 'https://cdn.logo.com/hotlink-ok/logo-social-sq.png',
+            link: 'https://innovationtank.ca/',
+            logo: 'https://innovationtank.ca/logo.png',
         },
         {
             name: 'Cancelled Toronto',
             year: 2020,
-            link: '',
-            logo: 'https://cdn.logo.com/hotlink-ok/logo-social-sq.png',
+            link: 'https://cancelledtoronto.ca/',
+            logo: 'https://cancelledtoronto.ca/images/header/narrow.png',
         },
     ];
     projects_19 = [
         {
             name: 'Freeze Frame',
             year: 2019,
-            link: '',
-            logo: 'https://cdn.logo.com/hotlink-ok/logo-social-sq.png',
+            link: 'https://farhan-mohammed.github.io/FrameFreeze/',
+            logo: FrameFreezeLogo,
         },
     ];
     renderProject = ({ name, year, link, logo }) => {
         return (
             <a className="home-project" href={link}>
-                <img src={logo} alt={name} className="home-project__image" />
+                <div className="home-project__imagecon">
+                    <img src={logo} alt={name} className="home-project__image" />
+                </div>
                 <div className="home-project__text">{name}</div>
             </a>
         );

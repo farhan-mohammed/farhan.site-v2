@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'container';
-@import 'terminal';
-@import 'checkout';
-@import 'intro';
-@import 'home';
+@import 'components/terminal';
+@import 'components/checkout';
+@import 'components/intro';
+@import 'pages/home';
+@import 'pages/awards';
