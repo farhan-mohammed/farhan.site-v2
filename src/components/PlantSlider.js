@@ -19,7 +19,7 @@ export default class PlantSlider extends Component {
                 >
                     ⬅️
                 </div>
-                <div className="ps-images" style={{ right: this.state.c * 250 }}>
+                <div className="ps-images" style={{ right: this.state.c * 300 }}>
                     {plants.map(({ descp, img }) => {
                         return (
                             <div
