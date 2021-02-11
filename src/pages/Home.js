@@ -28,7 +28,7 @@ export default class Home extends Component {
                 </section>
                 <section className="wide">
                     <div className="container web-con">
-                        <div className="home-title">Some websites I help build</div>
+                        <div className="home-title">Some websites I helped build</div>
                         <DemoProjects />
                     </div>
                 </section>
@@ -168,7 +168,7 @@ class Intro extends Component {
             spread: r(45, 120),
             origin: {
                 x: e.screenX / window.innerWidth,
-                y: e.screenY / window.innerHeight - 0.1,
+                y: e.screenY / window.innerHeight - 0.05,
             },
         });
     };

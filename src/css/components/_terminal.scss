@@ -21,7 +21,8 @@ $terminalHeight: 400px;
         color: $light;
     }
     &-con {
-        background-color: $black;
+        background-color: darken($black, 8);
+
         color: white;
         margin: 50px 100px;
         border-radius: 5px;

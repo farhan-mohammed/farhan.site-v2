@@ -1,0 +1,75 @@
+$psize: 300px;
+.ps {
+    &-con {
+        margin: 10px;
+        border-radius: 30px;
+        overflow-x: hidden;
+        position: relative;
+        width: $psize;
+        border: 10px solid $secondary;
+        &:hover > .ps-arrow {
+            &R,
+            &L {
+                opacity: 0.7;
+            }
+        }
+    }
+    &-images {
+        width: $psize;
+        background-size: contain;
+        height: $psize;
+        position: relative;
+        display: flex;
+        transition: right 0.5s;
+    }
+
+    &-image {
+        width: $psize;
+        background-size: contain;
+        height: $psize;
+        min-width: $psize;
+        min-height: $psize;
+        user-select: none;
+    }
+    &-text {
+        background-color: $secondary;
+        padding: 5px;
+        width: $psize;
+        height: $psize/4;
+    }
+    &-arrow {
+        &R,
+        &L {
+            z-index: 100;
+            position: absolute;
+            top: 0;
+            user-select: none;
+            height: $psize;
+            width: 30px;
+            // background-color: opacify($secondary, 0.5);
+            display: flex;
+            font-weight: 800;
+            font-size: 25px;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            transition: opacity 1s;
+            opacity: 0;
+        }
+        &R {
+            left: $psize - 50px;
+        }
+    }
+}
+.plant {
+    &-con {
+        padding-top: 100px;
+    }
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -13,6 +13,7 @@ $secondary: #74b49b;
 $background: #f4f9f4;
 $light: #a7d7c5;
 
+$buttontext: 24px;
 @mixin mobileq {
     @media (max-width: 768px) {
         @content;
