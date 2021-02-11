@@ -10,7 +10,7 @@ export default class PlantSlider extends Component {
         return (
             <div className="ps-con">
                 <div
-                    className="ps-arrowL"
+                    className={`ps-arrowL ${this.state.c === 0 ? 'hide' : ''}`}
                     onClick={() => {
                         let newc = this.state.c - 1;
                         if (newc < 0) newc = 0;
@@ -30,7 +30,7 @@ export default class PlantSlider extends Component {
                     })}
                 </div>
                 <div
-                    className="ps-arrowR"
+                    className={`ps-arrowR ${this.state.c === plants.length - 1 ? 'hide' : ''}`}
                     onClick={() => {
                         let newc = this.state.c + 1;
                         if (newc >= plants.length) newc = plants.length - 1;
