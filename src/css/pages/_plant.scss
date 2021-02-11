@@ -61,7 +61,7 @@ $psize: 300px;
                 color: inherit;
             }
             transition: opacity 1s;
-            opacity: 0;
+            opacity: 0.5;
         }
         &R {
             left: $psize - 40px;
