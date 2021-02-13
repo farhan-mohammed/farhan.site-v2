@@ -25,22 +25,27 @@
             line-height: 1;
         }
         margin: 25px;
-        padding: 5px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
         box-shadow: 0 10px 20px 8px rgba(black, 0.1);
-        transition: box-shadow 200ms ease, transform 200ms ease;
+        transition: box-shadow 300ms ease, transform 300ms ease, width 0.3s ease;
 
         &:hover {
             box-shadow: 0 5px 5px 1px rgba(black, 0.3);
-            transform: rotateZ(2deg);
+            transform: rotateZ(1.5deg);
             cursor: pointer;
+            & > .home-project__text {
+                color: $primary;
+                font-weight: 600;
+            }
         }
 
         &__text {
             text-align: center;
+            transition: color 0.3s ease;
         }
         &__image {
             &con {

@@ -24,7 +24,7 @@
         transition: color 0.5s, letter-spacing 0.3s;
         height: 150px;
         text-align: center;
-        border: 1px solid $primary;
+        border: 1px solid darken($light, 2);
         background-color: $light;
         color: $black;
         position: relative;
