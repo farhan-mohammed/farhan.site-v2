@@ -13,7 +13,8 @@ $terminalHeight: 400px;
     }
     &-green {
         color: greenyellow;
-        color: $primary;
+        // color: $primary;
+        // color: #fdbd3f;
     }
     &-purple {
         color: darken($primary, 3);
