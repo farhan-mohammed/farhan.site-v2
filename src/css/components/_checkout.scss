@@ -17,7 +17,7 @@
             margin: 0 auto;
             height: 150px;
             opacity: 0;
-            background-color: $primary;
+            background-color: lighten($light, 5);
             background-size: cover;
             background-position: center;
         }
@@ -35,7 +35,7 @@
         display: flex;
         align-items: center;
         &:hover {
-            color: $background;
+            color: $primary;
             letter-spacing: 10px;
             & > .cko-item__image {
                 opacity: 1;
