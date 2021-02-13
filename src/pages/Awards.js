@@ -1,47 +1,47 @@
-import Footer from 'components/Footer';
-import React, { Component } from 'react';
-import Header from '../components/Header';
+import Footer from "components/Footer";
+import React, { Component } from "react";
+import Header from "../components/Header";
 
 export default class Achivements extends Component {
     render() {
         const awards = [
             {
-                hackathon: 'Hack the North',
-                award: 'Best Health Application',
+                hackathon: "Hack the North",
+                award: "Best Health Application",
                 ranking: (
                     <span>
                         1<sup>st</sup>/320
                     </span>
                 ),
                 year: 2019,
-                href: '',
+                href: "",
             },
             {
-                hackathon: 'Deltahacks VI',
-                award: 'Best use of Machine Learning',
+                hackathon: "Deltahacks VI",
+                award: "Best use of Machine Learning",
                 ranking: (
                     <span>
                         2<sup>nd</sup>/158
                     </span>
                 ),
                 year: 2020,
-                href: 'https://devpost.com/software/trash-code',
-                href: '',
+                href: "https://devpost.com/software/trash-code",
+                href: "",
             },
             {
-                hackathon: 'Brickhacks VI',
-                award: 'Best use of MongoDB',
+                hackathon: "Brickhacks VI",
+                award: "Best use of MongoDB",
                 ranking: (
                     <span>
                         1<sup>st</sup>/107
                     </span>
                 ),
                 year: 2020,
-                href: 'https://devpost.com/software/goceries',
-                href: '',
+                href: "https://devpost.com/software/goceries",
+                href: "",
             },
             {
-                hackathon: 'Winhacks',
+                hackathon: "Winhacks",
                 award: `People's Choice Award`,
                 ranking: (
                     <span>
@@ -49,11 +49,11 @@ export default class Achivements extends Component {
                     </span>
                 ),
                 year: 2020,
-                href: 'https://devpost.com/software/corona-sef1yh',
-                href: '',
+                href: "https://devpost.com/software/corona-sef1yh",
+                href: "",
             },
             {
-                hackathon: 'Earthxhacks',
+                hackathon: "Earthxhacks",
                 award: `Top 10 overall`,
                 ranking: (
                     <span>
@@ -61,10 +61,10 @@ export default class Achivements extends Component {
                     </span>
                 ),
                 year: 2020,
-                href: '',
+                href: "",
             },
             {
-                hackathon: 'Hack the North',
+                hackathon: "Hack the North",
                 award: `CANSOFCAM Challenge`,
                 ranking: (
                     <span>
@@ -72,7 +72,7 @@ export default class Achivements extends Component {
                     </span>
                 ),
                 year: 2021,
-                href: '',
+                href: "",
             },
         ];
         function renderYearWins(year) {
@@ -85,9 +85,16 @@ export default class Achivements extends Component {
                             return (
                                 <div className="awards-bar__hackathon">
                                     <div className="awards-bar__hackathonO"></div>
-                                    <div className="awards-bar__hackathonTitle"> {hackathon}</div>
-                                    <div className="awards-bar__hackathonDescp">{award}</div>
-                                    <div className="awards-bar__hackathonDescp">{ranking}</div>
+                                    <div className="awards-bar__hackathonTitle">
+                                        {" "}
+                                        {hackathon}
+                                    </div>
+                                    <div className="awards-bar__hackathonDescp">
+                                        {award}
+                                    </div>
+                                    <div className="awards-bar__hackathonDescp">
+                                        {ranking}
+                                    </div>
                                 </div>
                             );
                         })}
@@ -97,15 +104,17 @@ export default class Achivements extends Component {
         return (
             <section className="full">
                 <div className="container awards-con">
-                    <Header page={'awards'} />
-                    <div className="awards-title home-title">Awards & Achievement</div>
+                    <Header page={"awards"} />
+                    <div className="awards-title home-title">
+                        Awards & Achievement
+                    </div>
                     <div className="awards-text">
                         <div className="awards-bar__con">
                             <div className="awards-bar__bar"></div>
                             <div className="awards-bar__section">
-                                {renderYearWins(2019)}
-                                {renderYearWins(2020)}
                                 {renderYearWins(2021)}
+                                {renderYearWins(2020)}
+                                {renderYearWins(2019)}
                             </div>
                         </div>
                     </div>
