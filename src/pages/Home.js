@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import confetti from "canvas-confetti";
 import Projects from "./Projects";
-
+import FarhanBio from "../media/farhanlinkedin.png";
 import FrameFreezeLogo from "../media/logos/framefreeze";
 import Footer from "components/Footer";
 export default class Home extends Component {
@@ -29,16 +29,30 @@ export default class Home extends Component {
             <div>
                 <Intro />
                 <section className="wide">
-                    <div className="container intro">
-                        <div className="intro-text">
-                            In my free time, I like to work on side projects to
-                            learning new and hopefully make something I or
-                            someone would actually use. I also like to garden
-                            and grow vegetable plants, there's just something
-                            about taking care of a plant that makes so worth
-                            while.<br></br>
-                            <br></br> I am currently searching for Software
-                            Engineering internships.
+                    <div className="container ">
+                        <div className="intro-second__con">
+                            <a
+                                className="intro-second__img"
+                                href="https://www.linkedin.com/in/farhanhmd/"
+                            >
+                                <img
+                                    src={FarhanBio}
+                                    alt="Farhan Mohammed Linkedin"
+                                ></img>
+                            </a>
+                            <div className="intro-second__text">
+                                <div className="intro-text">
+                                    In my free time, I like to work on side
+                                    projects to learning new and hopefully make
+                                    something I or someone would actually use. I
+                                    also like to garden and grow vegetable
+                                    plants, there's just something about taking
+                                    care of a plant that makes so worth while.
+                                    <br></br>
+                                    <br></br> I am currently searching for
+                                    Software Engineering internships.
+                                </div>{" "}
+                            </div>
                         </div>
                     </div>
                 </section>

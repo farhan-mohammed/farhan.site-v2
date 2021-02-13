@@ -3,7 +3,49 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    font-family: 'Nunito';
+    font-family: "Nunito";
+    &-second {
+        &__con {
+            display: flex;
+            margin: 50px 0;
+            @media (max-width: 1000px) {
+                flex-direction: column;
+            }
+        }
+        &__img {
+            padding: 30px;
+            background-size: fill;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & > img {
+                flex: 0;
+                width: 350px;
+                @media (max-width: 1000px) {
+                    width: 500px;
+                }
+                @include mobileq {
+                    width: 60vw;
+                }
+            }
+        }
+        &__text {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            & > div {
+                font-family: "Raleway";
+                height: -moz-fit-content;
+                // /* height: fit-content; */
+                /* text-align: center; */
+                font-size: 30px;
+                width: unset;
+                line-height: 1.4;
+            }
+        }
+    }
     &-name {
         color: $primary;
         display: inline-block;
@@ -11,7 +53,7 @@
         cursor: pointer;
     }
     &-text {
-        font-family: 'Raleway';
+        font-family: "Raleway";
         height: fit-content;
         text-align: center;
         font-size: $bodytext;
