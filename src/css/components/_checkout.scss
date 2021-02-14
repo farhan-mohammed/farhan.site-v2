@@ -1,5 +1,6 @@
 .cko {
     &-item {
+        flex: 1;
         &__text {
             position: absolute;
             top: 50%;
@@ -15,33 +16,37 @@
             position: relative;
             width: 100%;
             margin: 0 auto;
-            height: 150px;
+            height: 100px;
             opacity: 0;
-            background-color: lighten($light, 5);
+            background-color: $light;
+            // background-color: $secondary;
             background-size: cover;
             background-position: center;
         }
-        transition: color 0.5s, letter-spacing 0.3s;
-        height: 150px;
+        transition: color 0.5s, letter-spacing 0.3s, box-shadow 0.3s;
+        height: 100px;
+        margin: 10px;
         text-align: center;
-        border: 1px solid darken($light, 2);
-        background-color: $light;
+        border: 1px solid darken($light, 6);
+        background-color: darken($light, 6);
         color: $black;
         position: relative;
-        font-size: 40px;
+        font-size: 30px;
         background-size: cover;
         background-position: center;
-        font-weight: 600;
+        font-weight: 500;
         display: flex;
         align-items: center;
+        @include mobileq {
+            margin: 0;
+        }
         &:hover {
             color: $primary;
-            letter-spacing: 10px;
+            letter-spacing: 3px;
             & > .cko-item__image {
                 opacity: 1;
-                height: 150px;
                 width: 100%;
-                filter: blur(2px);
+                // filter: blur(2px);
             }
         }
         &:not(:last-child) {
@@ -50,8 +55,14 @@
     }
     &-con {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        max-width: calc(100vw - 30px);
         justify-content: stretch;
+        @include mobileq {
+            flex-direction: column;
+        }
     }
 }
 .web {

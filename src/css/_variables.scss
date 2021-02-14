@@ -8,8 +8,8 @@ $black: #222831;
     font-family: 'Raleway';
     color: $black;
 }
-$secondary: #6930c3;
 $primary: #ea2c62;
+$secondary: lighten($primary, 35);
 $background: #f6f5f5;
 $light: #dddddd;
 
