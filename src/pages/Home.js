@@ -187,10 +187,11 @@ class Intro extends Component {
                 particleCount,
                 angle: r(30, 150),
                 spread: r(45, 80),
+                startVelocity: 70,
                 gravity: 1,
                 origin: {
                     x: e.pageX / window.innerWidth,
-                    y: e.screenY / window.innerHeight - 0.12,
+                    y: e.screenY / window.innerHeight - 0.13,
                 },
             });
             // this.setState({ confetti: false });
@@ -209,8 +210,8 @@ class Intro extends Component {
         confetti({
             particleCount,
             angle: r(30, 150),
-            ticks: 50,
-            spread: r(45, 80),
+            ticks: 150,
+            spread: r(45, 180),
             gravity: -0.5,
             startVelocity: 40,
             origin: {
