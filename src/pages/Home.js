@@ -39,9 +39,9 @@ export default class Home extends Component {
                             </a>
                             <div className="intro-second__text">
                                 <div className="intro-text">
-                                    In my free time, I like to work on side projects to learning new
-                                    and hopefully make something I or someone would actually use. I
-                                    also like to garden and grow vegetable plants, there's just
+                                    In my free time, I like to work on side projects to learn new
+                                    things and hopefully make something someone would actually use.
+                                    I also like to garden and grow vegetable plants, there's just
                                     something about taking care of a plant that makes so worth
                                     while.
                                     <br></br>
@@ -180,18 +180,17 @@ class Intro extends Component {
         }
         if (this.state.confetti) {
             const direction = Math.sign(r(-6, 6));
-            const particleCount = r(2, 15);
+            const particleCount = r(5, 15);
             console.log(e);
             console.log('w', window.innerWidth);
             confetti({
                 particleCount,
                 angle: r(30, 150),
                 spread: r(45, 80),
-                startVelocity: 70,
                 gravity: 1,
                 origin: {
                     x: e.pageX / window.innerWidth,
-                    y: e.screenY / window.innerHeight - 0.08,
+                    y: e.screenY / window.innerHeight - 0.12,
                 },
             });
             // this.setState({ confetti: false });
@@ -206,12 +205,12 @@ class Intro extends Component {
             return parseInt(Math.random() * (ma - mi) + mi);
         }
         const direction = Math.sign(r(-6, 6));
-        const particleCount = r(122, 150);
+        const particleCount = r(122, 200);
         confetti({
             particleCount,
             angle: r(30, 150),
-            ticks: 400,
-            spread: r(45, 120),
+            ticks: 50,
+            spread: r(45, 80),
             gravity: -0.5,
             startVelocity: 40,
             origin: {
