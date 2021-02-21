@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    font-family: "Nunito";
+    font-family: 'Nunito';
     &-second {
         &__con {
             display: flex;
@@ -35,8 +35,9 @@
             justify-content: center;
             align-items: center;
             padding: 30px;
+            user-select: none;
             & > div {
-                font-family: "Raleway";
+                font-family: 'Raleway';
                 height: -moz-fit-content;
                 // /* height: fit-content; */
                 /* text-align: center; */
@@ -53,7 +54,7 @@
         cursor: pointer;
     }
     &-text {
-        font-family: "Raleway";
+        font-family: 'Raleway';
         height: fit-content;
         text-align: center;
         font-size: $bodytext;
