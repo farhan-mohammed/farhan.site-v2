@@ -59,9 +59,19 @@ body,
         width: 1170px;
     }
 }
-*::-webkit-scrollbar {
-    width: 1px;
+*::-webkit-scrollbar-track {
+    background-color: $light;
 }
+
+*::-webkit-scrollbar {
+    width: 5px;
+    background-color: $primary;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $primary;
+}
+
 body,
 #root {
     overflow-x: hidden;
@@ -73,7 +83,7 @@ footer {
     padding: 0 10px;
     flex-wrap: wrap;
     padding: 30px 0;
-    font-family: 'Raleway';
+    font-family: "Raleway";
     margin-bottom: 30px;
 
     & > * {
