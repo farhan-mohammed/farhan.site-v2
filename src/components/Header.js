@@ -20,13 +20,6 @@ export default class Header extends Component {
                 <Link className={this.props.page === 'awards' ? 'header-active' : ''} to="/awards">
                     awards
                 </Link>
-                <Link
-                    className={this.props.page === 'resume'}
-                    to="/resume.pdf"
-                    onClick={() => window.open(`./resume.pdf`)}
-                >
-                    resume
-                </Link>
             </nav>
         );
     }
