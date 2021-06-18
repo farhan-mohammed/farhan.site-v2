@@ -1,17 +1,20 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import Header from "../components/Header";
-import confetti from "canvas-confetti";
-import Projects from "./Projects";
-import FarhanBio from "../media/farhanlinkedin.png";
-import FrameFreezeLogo from "../media/logos/framefreeze";
-import RUHacksLogo from "../media/logos/ruhacks.png";
-import Footer from "components/Footer";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import confetti from 'canvas-confetti';
+import Projects from './Projects';
+import FarhanBio from '../media/farhanlinkedin.png';
+import FrameFreezeLogo from '../media/logos/framefreeze';
+import RUHacksLogo from '../media/logos/ruhacks.png';
+import axios from 'axios';
+import Footer from 'components/Footer';
 export default class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
             animCard: true,
+            name: 'Farhan',
+            fullname: 'Farhan Mohammed',
         };
     }
     updateAnim = () => {
@@ -24,11 +27,16 @@ export default class Home extends Component {
     };
     componentDidMount() {
         this.updateAnim();
+        axios.get('https://frozen-reaches-96529.herokuapp.com/v').then(({ data }) => {
+            if (data !== 'W') {
+                this.setState({ name: data.split(' ')[0], fullname: data });
+            }
+        });
     }
     render() {
         return (
             <div>
-                <Intro />
+                <Intro name={this.state.name} fullname={this.state.fullname} />
                 <section className="wide">
                     <div className="container ">
                         <div className="intro-second__con">
@@ -36,22 +44,18 @@ export default class Home extends Component {
                                 className="intro-second__img"
                                 href="https://www.linkedin.com/in/farhanhmd/"
                             >
-                                <img
-                                    src={FarhanBio}
-                                    alt="Farhan Mohammed Linkedin"
-                                ></img>
+                                <img src={FarhanBio} alt="Farhan Mohammed Linkedin"></img>
                             </a>
                             <div className="intro-second__text">
                                 <div className="intro-text">
-                                    In my free time, I like to work on side
-                                    projects to learn new things and hopefully
-                                    make something someone would actually use. I
-                                    also like to garden and grow vegetable
-                                    plants, there's just something about taking
-                                    care of a plant that makes so worth while.
+                                    In my free time, I like to work on side projects to learn new
+                                    things and hopefully make something someone would actually use.
+                                    I also like to garden and grow vegetable plants, there's just
+                                    something about taking care of a plant that makes so worth
+                                    while.
                                     <br></br>
-                                    <br></br> I am currently searching for
-                                    Software Engineering internships.
+                                    <br></br> I am currently searching for Software Engineering
+                                    internships.
                                 </div>
                             </div>
                         </div>
@@ -59,13 +63,13 @@ export default class Home extends Component {
                 </section>
                 <section className="wide">
                     <div className="container ">
-                        <Terminal></Terminal>
+                        <Terminal name={this.state.name} fullname={this.state.fullname}></Terminal>
                     </div>
                 </section>
                 <section className="wide">
                     <div className="container web-con">
                         <h2>Some websites I helped build</h2>
-                        <DemoProjects />
+                        <DemoProjects name={this.state.name} fullname={this.state.fullname} />
                     </div>
                 </section>
                 <section className="wide">
@@ -90,13 +94,11 @@ export default class Home extends Component {
                 <section className="wide">
                     <div className="container intro">
                         <div className="intro-text">
-                            hello, I found a card{" "}
+                            hello, I found a card{' '}
                             <a
                                 href="https://card.farhan.site/"
-                                className={
-                                    this.state.animCard ? "tadaanim" : ""
-                                }
-                                style={{ display: "block", fontSize: 60 }}
+                                className={this.state.animCard ? 'tadaanim' : ''}
+                                style={{ display: 'block', fontSize: 60 }}
                             >
                                 <i class="far fa-id-card"></i>
                             </a>
@@ -113,37 +115,37 @@ export default class Home extends Component {
 class DemoProjects extends Component {
     projects_21 = [
         {
-            name: "RU Hacks",
+            name: 'RU Hacks',
             year: 2021,
-            link: "https://ruhacks.com",
+            link: 'https://ruhacks.com',
             logo: RUHacksLogo,
         },
         {
-            name: "Ryerson DSC",
+            name: 'Ryerson DSC',
             year: 2021,
-            link: "",
-            logo: "https://cdn.logo.com/hotlink-ok/logo-social-sq.png",
+            link: '',
+            logo: 'https://cdn.logo.com/hotlink-ok/logo-social-sq.png',
         },
     ];
     projects_20 = [
         {
-            name: "Innovation Tank",
+            name: 'Innovation Tank',
             year: 2020,
-            link: "https://innovationtank.ca/",
-            logo: "https://innovationtank.ca/logo.png",
+            link: 'https://innovationtank.ca/',
+            logo: 'https://innovationtank.ca/logo.png',
         },
         {
-            name: "Cancelled Toronto",
+            name: 'Cancelled Toronto',
             year: 2020,
-            link: "https://cancelledtoronto.ca/",
-            logo: "https://cancelledtoronto.ca/images/header/narrow.png",
+            link: 'https://cancelledtoronto.ca/',
+            logo: 'https://cancelledtoronto.ca/images/header/narrow.png',
         },
     ];
     projects_19 = [
         {
-            name: "Freeze Frame",
+            name: 'Freeze Frame',
             year: 2019,
-            link: "https://farhan-mohammed.github.io/FrameFreeze/",
+            link: 'https://farhan-mohammed.github.io/FrameFreeze/',
             logo: FrameFreezeLogo,
         },
     ];
@@ -151,11 +153,7 @@ class DemoProjects extends Component {
         return (
             <a className="home-project" href={link}>
                 <div className="home-project__imagecon">
-                    <img
-                        src={logo}
-                        alt={name}
-                        className="home-project__image"
-                    />
+                    <img src={logo} alt={name} className="home-project__image" />
                 </div>
                 <div className="home-project__text">{name}</div>
             </a>
@@ -193,7 +191,7 @@ class Intro extends Component {
             const direction = Math.sign(r(-6, 6));
             const particleCount = r(5, 15);
             console.log(e);
-            console.log("w", window.innerWidth);
+            console.log('w', window.innerWidth);
             confetti({
                 particleCount,
                 angle: r(30, 150),
@@ -235,19 +233,18 @@ class Intro extends Component {
         return (
             <section className="full">
                 <div className="container intro">
-                    <Header page={"home"} />
+                    <Header page={'home'} />
                     <div className="intro-text">
-                        Hello, I'm{" "}
+                        Hello, I'm{' '}
                         <div
                             className="intro-name"
                             onMouseMove={this.renderConfetti}
                             onClick={this.clickConfetti}
                         >
-                            Farhan Mohammed 🎉
+                            {this.props.fullname} 🎉
                         </div>
-                        , a Math & Computer Science Student at Ryerson
-                        University, who's passionate about design and
-                        development.
+                        , a Math & Computer Science Student at Ryerson University, who's passionate
+                        about design and development.
                     </div>
                     <div className="intro-arrow">
                         <span class="fa fa-arrow-down fa-2x"></span>
@@ -267,106 +264,88 @@ class Terminal extends Component {
         };
     }
     render() {
+        const { name, fullname } = this.props;
         const Lines = [
-            { command: "name", result: ["Farhan Mohammed"] },
+            { command: 'name', result: [fullname] },
             {
-                command: "university expected_graduation",
-                result: ["Ryerson University", "Spring 2022"],
+                command: 'university expected_graduation',
+                result: ['Ryerson University', 'Spring 2022'],
             },
             {
-                command: "favourite_frameworks_and_libraries",
-                result: ["React.js, Express.js, Numpy, Tensorflow"],
+                command: 'favourite_frameworks_and_libraries',
+                result: ['React.js, Express.js, Numpy, Tensorflow'],
             },
             {
-                command: "favouritE_tools",
-                result: ["Git, Netlify"],
+                command: 'favouritE_tools',
+                result: ['Git, Netlify'],
             },
             {
-                command: "favourite_text_editor",
+                command: 'favourite_text_editor',
                 result: [
                     <a
                         href="https://www.youtube.com/watch?v=gnupOrSEikQ&ab_channel=BenAwad"
-                        style={{ textDecoration: "none", color: "inherit" }}
+                        style={{ textDecoration: 'none', color: 'inherit' }}
                     >
                         VimCode
                     </a>,
                 ],
             },
             {
-                command: "favourite_languages",
-                result: ["Python, JavaScript/TypeScript, Java, C++"],
+                command: 'favourite_languages',
+                result: ['Python, JavaScript/TypeScript, Java, C++'],
             },
             {
-                command: "extracurriculars",
+                command: 'extracurriculars',
                 result: [
-                    "RUHacks 2021 Organizer",
-                    "Ryerson Programming Club",
-                    "Ryerson Robotics team",
-                    "Developer Studenet Club",
+                    'RUHacks 2021 Organizer',
+                    'Ryerson Programming Club',
+                    'Ryerson Robotics team',
+                    'Developer Studenet Club',
                 ],
             },
             {
-                command: "favourite_plants",
-                result: ["Peppers, Cucumbers, Tomatoes, Lettuce"],
+                command: 'favourite_plants',
+                result: ['Peppers, Cucumbers, Tomatoes, Lettuce'],
             },
             {
-                command: "favourite_games",
-                result: ["Valorant, Rocket League"],
+                command: 'favourite_games',
+                result: ['Valorant, Rocket League'],
             },
         ];
         return (
-            <div
-                className={`terminal-con ${
-                    this.state.full ? "terminal-con__full" : ""
-                }`}
-            >
+            <div className={`terminal-con ${this.state.full ? 'terminal-con__full' : ''}`}>
                 <div className="terminal-header">
                     <div className="terminal-header__buttons">
                         <div
                             className="terminal-header__button terminal-header__close"
-                            onClick={() =>
-                                alert(
-                                    "Why are you trying to close my terminal!!!!!"
-                                )
-                            }
+                            onClick={() => alert('Why are you trying to close my terminal!!!!!')}
                         >
                             <i class="close icon"></i>
                         </div>
                         <div
                             className="terminal-header__button terminal-header__minimize"
-                            onClick={() =>
-                                this.setState({ close: !this.state.close })
-                            }
+                            onClick={() => this.setState({ close: !this.state.close })}
                         >
                             <i class="window minimize outline icon"></i>
                         </div>
                         <div
                             className="terminal-header__button terminal-header__fullscreen"
-                            onClick={() =>
-                                this.setState({ full: !this.state.full })
-                            }
+                            onClick={() => this.setState({ full: !this.state.full })}
                         >
                             <i class="expand arrows alternate icon"></i>
                         </div>
                     </div>
                 </div>
-                <div
-                    className={`terminal-body ${
-                        this.state.close ? "terminal-body__closed" : ""
-                    }`}
-                >
+                <div className={`terminal-body ${this.state.close ? 'terminal-body__closed' : ''}`}>
                     {Lines.map(({ command, result }) => (
                         <div>
                             <div className="terminal-line__command">
-                                <span className="terminal-green">
-                                    farhan@server
-                                </span>
-                                :
+                                <span className="terminal-green">{name.toLowerCase()}@server</span>:
                                 <span
                                     className="terminal-purple"
                                     style={{
-                                        margin: "0 3px 0 5px",
-                                        fontSize: "0.9em",
+                                        margin: '0 3px 0 5px',
+                                        fontSize: '0.9em',
                                     }}
                                 >
                                     ~ $
